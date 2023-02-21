@@ -11,6 +11,7 @@ import {
 } from "./SidebarStyles";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Divider from '@mui/material/Divider';
 
 import { SidebarItems } from "..";
@@ -45,21 +46,21 @@ export default function Sidebar({ children }) {
                 wipass
               </SidebarBrand>
             </SidebarLogo>
-            <SidebarToggler
+            {displaySidebar ? <SidebarToggler
               displaySidebar={displaySidebar}
               onClick={handleSidebarDisplay}
             >
               <ArrowBackIcon />
-            </SidebarToggler>
+            </SidebarToggler> : <ArrowForwardIcon onClick={handleSidebarDisplay} />}
           </SidebarLogoWrapper>
-          Data
+          {displaySidebar ? "Data" : <Divider />}
           <DataSideBarItems displaySidebar={displaySidebar} />
-          Device Management
+          {displaySidebar ? " Device Management" : <Divider />}
           <DeviceSideBarItems displaySidebar={displaySidebar} />
-          Tools
+          {displaySidebar ? "Tools" : <Divider />}
           <ToolsSideBarItems displaySidebar={displaySidebar} />
           <Divider />
-          Settings
+          {displaySidebar ? "Tools" : ""}
         </SidebarWrapper>
       </SidebarContainer>
       <Children displaySidebar={displaySidebar}>{children}</Children>

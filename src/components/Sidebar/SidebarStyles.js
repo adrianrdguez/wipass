@@ -106,37 +106,7 @@ export const SidebarContainer = styled.div`
     justify-content: ${({ displaySidebar }) => !displaySidebar && "center"};
   }
 
-  &:hover {
-    ${({ displaySidebar }) =>
-      !displaySidebar && "box-shadow: 8px 0px 12px 0px rgba(0,0,0,0.1)"};
-
-    @media (min-width: 468px) {
-      width: ${({ displaySidebar }) => !displaySidebar && "15rem"};
-
-      ${SidebarLogoWrapper} {
-        justify-content: ${({ displaySidebar }) =>
-          !displaySidebar && "space-between"};
-      }
-
-      ${SidebarBrand} {
-        display: ${({ displaySidebar }) => !displaySidebar && "block"};
-      }
-
-      ${SidebarToggler} {
-        display: ${({ displaySidebar }) => !displaySidebar && "block"};
-      }
-
-      ${ItemWrapper} {
-        justify-content: ${({ displaySidebar }) =>
-          !displaySidebar && "flex-start"};
-      }
-
-      ${ItemName} {
-        display: ${({ displaySidebar }) => !displaySidebar && "block"};
-        margin-left: ${({ displaySidebar }) => !displaySidebar && "0.5rem"};
-      }
-    }
-  }
+  
 
   ::-webkit-scrollbar {
     width: 4px;
